@@ -17,8 +17,10 @@
             v-for="item of items"
             type="basket"
             :item="item"
+            @del="remove"
             :key="item.productId"
         />
+        <!--   В  @del id сам передасться так как это обработка событий, в обработку событий передаётся аргумент по умолчанию    -->
 
         <div class="priceBuyCart">
           <div class="priceTextTotal">TOTAL:</div>

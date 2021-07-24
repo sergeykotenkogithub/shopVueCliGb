@@ -1,7 +1,6 @@
 <template>
   <div>
   <header>
-    <!-- Симантический тег! -->
     <div class="header">
 
       <div class="container">
@@ -30,10 +29,8 @@
   </header>
   <div class="topNav">
     <nav>
-      <!-- Симантический тег навигация -->
-      <a href="index.html"> Home </a>
-<!--      <a href="shoping_cart.html"> Man </a>-->
-      <a href="/about"> Man </a>
+      <router-link :to="{name: 'Home'}" class="aaa">Man</router-link>
+      <router-link :to="{name: 'About'}" class="aaa">Man</router-link>
       <a href="single_page.html">Women</a>
       <a href="product.html">Kids</a>
       <a href="checkout.html">Accoseriese</a>

@@ -51,11 +51,19 @@
             </div>
           </div>
           <div class="cartCircle">
+                          <!--    1й способ удаления:        -->
+            <!--            <a-->
+            <!--                @click.prevent="$parent.remove(item.productId)"-->
+            <!--                href="#"-->
+            <!--                class="far fa-times-circle faCart"-->
+            <!--            >-->
+
+                          <!--     2й способ удаления:        -->
             <a
-                @click.prevent="$parent.remove(item.productId)"
+                @click.prevent="$emit('del', item.productId)"
                 href="#"
                 class="far fa-times-circle faCart"
-                name="remove" >
+            >
             </a>
           </div>
         </div>
