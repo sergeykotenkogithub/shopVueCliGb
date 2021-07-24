@@ -7,7 +7,7 @@
             src="@/assets/images/cars.jpg"
             alt="cars"
             id="basket-btn"
-        /><span class="cartNumber">2</span>
+        /><span class="cartNumber">{{ cartQuantity }} </span>
       </div>
 
       <div class="buyCart" id="basket-inner" v-show="show">
@@ -49,8 +49,6 @@ export default {
       items: [],
       url: "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/json/basket.json",
       show: false,
-      price: 0, // временно
-      sum: 0
     }
   },
   methods: {
@@ -93,6 +91,13 @@ export default {
       let sum = 0
       this.items.forEach(item => {
         sum += item.amount * item.productPrice;
+      })
+      return sum
+    },
+    cartQuantity() {
+      let sum = 0
+      this.items.forEach(item => {
+        sum += item.amount;
       })
       return sum
     }

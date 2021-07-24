@@ -291,19 +291,5 @@ export default {
       },
     }
   },
-
-  methods: {
-
-    get(url) {
-      return fetch(url).then(d => d.json())
-    },
-
-
-  },
-
-  mounted() {
-    console.log(this)
-  }
-
 }
 </script>

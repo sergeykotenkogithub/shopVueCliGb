@@ -51,7 +51,12 @@
             </div>
           </div>
           <div class="cartCircle">
-            <a href="#" class="far fa-times-circle faCart" name="remove" data-id="${item.productId}"></a>
+            <a
+                @click.prevent="$parent.remove(item.productId)"
+                href="#"
+                class="far fa-times-circle faCart"
+                name="remove" >
+            </a>
           </div>
         </div>
         <div class="horizontal cartHorizontal"></div>
@@ -71,7 +76,7 @@ export default {
       default: "catalog"
     },
     item: {
-      type: Object, default:() => ({})
+      type: Object, default:() => ({}) // Если надо писать default некий массив, то надо писать метод, по умолчанию item пустой объект
     },
   },
   methods: {
