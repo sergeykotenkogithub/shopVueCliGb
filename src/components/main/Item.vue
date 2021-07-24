@@ -72,6 +72,11 @@ export default {
     },
     item: {
       type: Object, default:() => ({})
+    },
+  },
+  methods: {
+    add(item) {
+      this.$parent.$parent.$refs.basket.add(item);
     }
   }
 }
