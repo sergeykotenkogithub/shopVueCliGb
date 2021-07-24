@@ -89,7 +89,8 @@ export default {
   },
   methods: {
     add(item) {
-      this.$parent.$parent.$refs.basket.add(item);
+      // this.$parent.$parent.$refs.basket.add(item);
+      this.$store.dispatch('changeBasketItems', { item, action: undefined });  // dispatch - вызов
     }
   }
 }

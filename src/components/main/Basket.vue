@@ -42,13 +42,12 @@
 
 import { get } from '@/core/requests'
 import Item from "./Item.vue";
-
+import { mapGetters } from 'vuex';
 
 export default {
   components: { Item },
   data() {
     return {
-      items: [],
       url: "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/json/basket.json",
       show: false,
     }
@@ -62,9 +61,12 @@ export default {
       let find = this.items.find(el => item.productId == el.productId);
 
       if(find) {
-        find.amount++
+        this.$store.dispatch('changeBasketItems', {item: find, action: 3, amount: 1 })
+        // find.amount++
       } else {
-        this.items.push(Object.assign({}, item, {amount: 1}));
+        let newItem = Object.assign({}, item, {amount: 1});
+        this.$store.dispatch('changeBasketItems', {item: newItem, action: 1})
+        // this.items.push(Object.assign({}, item, {amount: 1}));
       }
     },
 
@@ -73,15 +75,17 @@ export default {
       let find = this.items.find(el => el.productId == id);
 
       if(find.amount > 1) {
-        find.amount--;
+        this.$store.dispatch('changeBasketItems', {item: find, action: 3, amount: -1 })
+        // find.amount--;
       } else {
-        this.items.splice(this.items.indexOf(find), 1) // 1 - значит 1 элемент
+        this.$store.dispatch('changeBasketItems', {item: find, action: 2})
+        // this.items.splice(this.items.indexOf(find), 1) // 1 - значит 1 элемент
       }
     }
   },
   async mounted() {
     try {
-      this.items = (await get(this.url)).content;
+      this.$store.dispatch('loadBasket', this.url)  // могу обращаться так как в main.js прописвн store
     }
     catch (err) {
       console.log(err)
@@ -89,6 +93,7 @@ export default {
   },
 
   computed: {
+    ...mapGetters({ items: 'basket_getter' }),
     cartTotal() {
       let sum = 0
       this.items.forEach(item => {
