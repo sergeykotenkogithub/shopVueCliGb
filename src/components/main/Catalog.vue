@@ -14,7 +14,7 @@
 <script>
 
 import { get } from '@/core/requests'
-import Item from './CatalogItem.Vue'
+import Item from './Item.vue'
 
 export default {
   components: { Item },

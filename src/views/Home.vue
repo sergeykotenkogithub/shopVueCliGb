@@ -18,61 +18,7 @@
         </form>
 
         <!-- Подгрузка с Js корзины  -->
-        <div id="basket">
-          <div class="img_Cart_header" id="clickCart" >
-            <div class="cartScale" @click="showBasket">
-              <img
-                  class="cart"
-                  src="@/assets/images/cars.jpg"
-                  alt="cars"
-                  id="basket-btn"
-              /><span class="cartNumber">2</span>
-            </div>
-
-            <div class="buyCart" id="basket-inner" v-show="basket.show">
-
-              <!--     Тут вставляется блок с добавленными товарами           -->
-              <div class="cartBuyItems" id="basket-items" v-for="item of basket.items" :key="item.productId">
-                <div class="cartFlex" >
-                  <div>
-                    <img :src="item.productImg" alt="buy4">
-                  </div>
-
-                  <div class="textCenterCart">
-                    <div class="textByCart">{{ item.productName }}</div>
-                    <div>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                    </div>
-                    <div class="priceCart">
-                      {{ item.amount }} x <span>{{ item.productPrice }}</span> = {{ item.amount * item.productPrice }}
-                    </div>
-                  </div>
-                  <div class="cartCircle">
-                    <a href="#" class="far fa-times-circle faCart" name="remove" data-id="${item.productId}"></a>
-                  </div>
-                </div>
-                <div class="horizontal cartHorizontal"></div>
-
-              </div>
-
-              <div class="priceBuyCart">
-                <div class="priceTextTotal">TOTAL:</div>
-                <!--                  <p class="priceTextTotal">-->
-                <!--                    $ <span id="basket-sum">500.00</span>-->
-                <!--                  </p>  -->
-                <p class="priceTextTotal">
-                  $ <span id="basket-sum">{{ price }}</span>
-                </p>
-              </div>
-              <button>CHECKOUT</button>
-              <button>GO TO CART</button>
-            </div>
-          </div>
-        </div>
+        <Basket/>
 
         <!-- Мой аккаунт кнопка -->
         <button class="myAccount">
@@ -332,18 +278,17 @@
 <script>
 // @ is an alias to /src
 import Catalog from "@/components/main/Catalog";
+import Basket from "@/components/main/Basket";
 
 export default {
   name: 'Home',
-  components: { Catalog },
+  components: {Basket, Catalog },
   data() {
     return {
       basket: {
         items: [],
         url: "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/json/basket.json",
-        show: false
       },
-      price: 0 // временно
     }
   },
 
