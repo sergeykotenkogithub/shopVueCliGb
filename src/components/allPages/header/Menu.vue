@@ -1,12 +1,11 @@
 <template>
   <div class="topNav">
     <nav>
-      <a href="index.html"> Home </a>
-      <!--      <a href="shoping_cart.html"> Man </a>-->
-      <a href="/about"> Man </a>
-      <a href="single_page.html">Women</a>
-      <a href="product.html">Kids</a>
-      <a href="checkout.html">Accoseriese</a>
+      <router-link :to="{name: 'Home'}" class="topNav__active">Home</router-link>
+      <router-link :to="{name: 'ShoppingCart'}">Man</router-link>
+      <router-link :to="{name: 'SinglePage'}">Women</router-link>
+      <router-link :to="{name: 'Product'}">Kids</router-link>
+      <router-link :to="{name: 'Checkout'}">Accoseriese</router-link>
       <a href="#">Featured</a>
       <a href="#">Hot Deals</a>
     </nav>

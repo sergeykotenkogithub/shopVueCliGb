@@ -7,7 +7,8 @@ export function post(url, item) {
         method: 'POST',
         body: JSON.stringify(item),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
     }).then(d => d.json())
 }
@@ -16,7 +17,8 @@ export function put(url, am) {
         method: 'PUT',
         body: JSON.stringify({amount: am}),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
     }).then(d => d.json())
 }
@@ -24,7 +26,8 @@ export function deleteReq(url) {
     return fetch(url, {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
     }).then(d => d.json())
 }

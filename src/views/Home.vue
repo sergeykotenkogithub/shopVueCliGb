@@ -1,46 +1,5 @@
 <template>
   <div>
-    <header>
-      <div class="header">
-
-        <div class="container">
-          <a class="noDecor" href="index.html">
-            <div class="logo">BRAN<span>D</span></div>
-          </a>
-          <form class="topSearch" action="#">
-            <button class="searchBrowse">
-              Browse
-              <i class="fas fa-caret-down"></i>
-            </button>
-            <input type="text" placeholder="Search for Item..." />
-            <button class="searchButton"><i class="fas fa-search"></i></button>
-          </form>
-
-          <!-- Подгрузка с Js корзины  -->
-          <Basket ref="basket"/>
-
-          <!-- Мой аккаунт кнопка -->
-          <button class="myAccount">
-            My Account
-            <i class="fas fa-caret-down"></i>
-          </button>
-        </div>
-      </div>
-    </header>
-    <div class="topNav">
-      <nav>
-        <router-link :to="{name: 'Home'}" class="aaa">Man</router-link>
-        <router-link :to="{name: 'About'}" class="aaa">Man</router-link>
-        <a href="single_page.html">Women</a>
-        <a href="product.html">Kids</a>
-        <a href="checkout.html">Accoseriese</a>
-        <a href="#">Featured</a>
-        <a href="#">Hot Deals</a>
-      </nav>
-    </div>
-
-    <!-- Заканчивается меню -->
-    <!-- 2й блок -->
     <div class="promo">
       <div class="container">
         <div class="promoWrap">
@@ -149,9 +108,6 @@
       </div>
     </div>
 
-    <!-- Блок с subscribe и отзывом -->
-
-
   </div>
 
 </template>
@@ -159,18 +115,8 @@
 <script>
 // @ is an alias to /src
 import Catalog from "@/components/main/Catalog";
-import Basket from "@/components/main/Basket";
 
 export default {
-  name: 'Home',
-  components: {Basket, Catalog },
-  data() {
-    return {
-      basket: {
-        items: [],
-        url: "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/json/basket.json",
-      },
-    }
-  },
+  components: { Catalog },
 }
 </script>

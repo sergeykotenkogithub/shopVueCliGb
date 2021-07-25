@@ -141,7 +141,6 @@
 }
 
 .buyCart {
-  margin-left: -350px;
   position: absolute;
   border: 1px solid #eaeaea;
   width: 365px;
@@ -149,13 +148,23 @@
   margin-top: 40px;
   display: block;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   justify-content: space-between;
   min-height: 55%;
   padding: 20px 20px;
   border-radius: 2%;
   box-shadow: 10px 14px 15px 3px rgba(0, 0, 0, 0.43);
+  @media (max-width: 545px) {
+    right: -65px;
+    width: 330px;
+  }
+  @media (max-width: 445px) {
+    right: -25px;
+    width: 300px;
+  }
+  @media (max-width: 350px) {
+    right: -50px;
+  }
 
   > div {
     display: flex;
@@ -170,6 +179,9 @@
 
   img {
     height: 120px;
+    @media (max-width: 445px)  {
+      height: 80px;
+    }
   }
 
   button {
@@ -191,6 +203,9 @@
   .cartHorizontal {
     width: 100%;
     margin: 10px 0;
+    @media (max-width: 445px) {
+      width: 265px;
+    }
   }
 
   .textByCart {
@@ -204,6 +219,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 15px;
   }
 
   .priceCart {
@@ -222,11 +238,6 @@
     font-size: 20px;
   }
 }
-
-// .img_Cart_header:hover .buyCart {
-//   display: flex;
-//   color: black;
-// }
 
 .cartBuyItems {
   display: flex;
