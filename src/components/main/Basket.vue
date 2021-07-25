@@ -48,7 +48,8 @@ export default {
   components: { Item },
   data() {
     return {
-      url: "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/json/basket.json",
+      // url: "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/json/basket.json",
+      url: '/api/basket',
       show: false,
     }
   },
@@ -62,11 +63,9 @@ export default {
 
       if(find) {
         this.$store.dispatch('changeBasketItems', {item: find, action: 3, amount: 1 })
-        // find.amount++
       } else {
         let newItem = Object.assign({}, item, {amount: 1});
         this.$store.dispatch('changeBasketItems', {item: newItem, action: 1})
-        // this.items.push(Object.assign({}, item, {amount: 1}));
       }
     },
 
@@ -76,10 +75,8 @@ export default {
 
       if(find.amount > 1) {
         this.$store.dispatch('changeBasketItems', {item: find, action: 3, amount: -1 })
-        // find.amount--;
       } else {
         this.$store.dispatch('changeBasketItems', {item: find, action: 2})
-        // this.items.splice(this.items.indexOf(find), 1) // 1 - значит 1 элемент
       }
     }
   },

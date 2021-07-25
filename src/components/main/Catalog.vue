@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       items: [],
-      url: "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/json/catalog.json"
+      // url: "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/json/catalog.json"
+      url: '/api/catalog'
     }
   },
   async mounted() {
