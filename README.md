@@ -3,7 +3,7 @@
 ## Server start
 ```
 cd server
-npm run serve
+npm run api
 
 ```
 
