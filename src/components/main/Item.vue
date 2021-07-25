@@ -59,6 +59,7 @@
             <!--            >-->
 
                           <!--     2й способ удаления:        -->
+<!--            @click.prevent="$emit('del', item.productId)"-->
             <a
                 @click.prevent="$emit('del', item.productId)"
                 href="#"

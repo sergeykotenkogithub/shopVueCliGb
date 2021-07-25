@@ -40,7 +40,7 @@
 
 <script>
 
-import { get } from '@/core/requests'
+import { get, post, put, deleteReq } from '@/core/requests'
 import Item from "./Item.vue";
 import { mapGetters } from 'vuex';
 
@@ -57,19 +57,6 @@ export default {
     showBasket() {
       this.show = !this.show
     },
-
-    add(item) {
-      let find = this.items.find(el => item.productId == el.productId);
-
-      if(find) {
-        this.$store.dispatch('changeBasketItems', {item: find, action: 3, amount: 1 })
-      } else {
-        let newItem = Object.assign({}, item, {amount: 1});
-        this.$store.dispatch('changeBasketItems', {item: newItem, action: 1})
-      }
-    },
-
-
     remove(id) {
       let find = this.items.find(el => el.productId == id);
 
