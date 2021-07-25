@@ -1,0 +1,27 @@
+{
+ "totalAmount": 3,
+ "totalPrice": 203,
+ "content": [
+  {
+   "productName": "STRAWBERRY PEOPLE T-SHIRT",
+   "productPrice": 55,
+   "productImg": "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/imageGb/buy3.jpg",
+   "productId": "prod_2",
+   "amount": 1
+  },
+  {
+   "productName": "BANANA PEOPLE T-SHIRT",
+   "productPrice": 53,
+   "productImg": "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/imageGb/buy2.jpg",
+   "productId": "prod_1",
+   "amount": 3
+  },
+  {
+   "productName": "CUCUMBER PEOPLE T-SHIRT",
+   "productPrice": 23,
+   "productImg": "https://raw.githubusercontent.com/sergeykotenkogithub/imageProject/main/imageGb/buy7.jpg",
+   "productId": "prod_6",
+   "amount": 2
+  }
+ ]
+}

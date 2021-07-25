@@ -1,19 +1,14 @@
 # shop
 
-## Project setup
+## Server start
 ```
-yarn install
+cd server
+npm run serve
+
 ```
 
-### Compiles and hot-reloads for development
+### Project start
 ```
-yarn serve
+cd project
+yarn run serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
